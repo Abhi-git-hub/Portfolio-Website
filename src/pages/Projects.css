@@ -231,6 +231,15 @@
   font-size: 1.2rem;
 }
 
+/* Add styles for video embeds */
+.project-card iframe {
+  width: 100%;
+  height: 450px;
+  border-radius: 10px;
+  margin-top: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 @media (max-width: 768px) {
   .projects-section {
     padding: 2rem 1rem;
@@ -243,43 +252,79 @@
   .project-tabs {
     flex-direction: column;
     align-items: center;
+    gap: 0.8rem;
   }
 
   .tab-button {
     width: 100%;
-    max-width: 300px;
-    justify-content: center;
-  }
-
-  .project-card {
-    min-height: 280px;
-    padding: 1.5rem;
-    max-width: 100%;
-  }
-
-  .project-content h2 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .project-content p {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .project-links {
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-
-  .project-links a {
-    width: 100%;
-    padding: 0.5rem 1rem;
+    max-width: 250px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
   }
 
   .project-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    padding: 0;
+  }
+
+  .project-card {
+    max-width: 320px;
+    min-height: 280px;
+    padding: 1.5rem;
+  }
+
+  .project-card iframe {
+    height: 350px;
+  }
+
+  .project-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .project-content p {
+    font-size: 0.9rem;
+  }
+
+  .project-links a {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-section h1 {
+    font-size: 2rem;
+  }
+  .projects-section p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  .project-card {
+    padding: 1.2rem;
+    min-height: 250px;
+  }
+  .project-card iframe {
+    height: 300px;
+  }
+  .project-content h2 {
+    font-size: 1.2rem;
+  }
+  .project-content p {
+    font-size: 0.85rem;
+  }
+  .tech-tag {
+    font-size: 0.8rem;
+  }
+  .project-links {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .project-links a {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
   }
 }
 
@@ -307,4 +352,34 @@ body.dark .project-card h3 {
 }
 body.dark .project-card p {
   color: #ffd700bb;
+}
+
+.instagram-embed {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.instagram-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.instagram-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.instagram-link svg {
+  font-size: 1.2rem;
 }
