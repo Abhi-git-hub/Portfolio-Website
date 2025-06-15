@@ -1,0 +1,73 @@
+/* App container for layout */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  transition: background 0.4s;
+  position: relative;
+}
+
+/* Main content area */
+main {
+  flex: 1;
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Card-like section for each page */
+section {
+  background: none;
+  border-radius: 1.5rem;
+  box-shadow: none;
+  padding: 2.5rem 2rem;
+  margin-bottom: 2.5rem;
+  transition: background 0.3s;
+}
+
+/* Headings */
+section h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #232526;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+}
+
+body.dark section h1 {
+  color: #fff;
+}
+
+section h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #3ec6e0;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+section p {
+  color: #444;
+  font-size: 1.08rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+body.dark section p {
+  color: #e0e0e0;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  main {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+  }
+  section {
+    padding: 1.5rem 0.7rem;
+  }
+  section h1 {
+    font-size: 1.5rem;
+  }
+}

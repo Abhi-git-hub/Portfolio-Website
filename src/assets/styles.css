@@ -1,0 +1,313 @@
+/* Global Styles */
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #1e40af;
+  --text-color: #1b4c91;
+  --light-bg: #f3f4f6;
+  --white: #ffffff;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --transition: all 0.3s ease;
+  --name-gradient: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  --name-gradient-dark: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  --card-glow: 0 0 15px rgba(37, 99, 235, 0.1);
+  --card-glow-hover: 0 0 25px rgba(37, 99, 235, 0.2);
+  --brand-text: #000000;
+  --brand-text-dark: #ffffff;
+}
+
+/* Theme Variables */
+.light {
+  --bg-color: #ffffff;
+  --card-bg: #ffffff;
+  --text-color: #1b4c91;
+  --nav-bg: rgba(255, 255, 255, 0.98);
+  --nav-text: #1b4c91;
+  --nav-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --card-border: rgba(37, 99, 235, 0.1);
+  --card-glow: 0 0 15px rgba(37, 99, 235, 0.1);
+  --card-glow-hover: 0 0 25px rgba(37, 99, 235, 0.2);
+  --brand-text: #000000;
+}
+
+.dark {
+  --bg-color: #000000;
+  --card-bg: #1a1a1a;
+  --text-color: #e5e7eb;
+  --nav-bg: rgba(26, 26, 26, 0.98);
+  --nav-text: #e5e7eb;
+  --nav-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --card-border: rgba(96, 165, 250, 0.1);
+  --card-glow: 0 0 15px rgba(96, 165, 250, 0.15);
+  --card-glow-hover: 0 0 25px rgba(96, 165, 250, 0.25);
+  --brand-text: #ffffff;
+}
+
+/* Font Family */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  background-color: var(--bg-color);
+  transition: var(--transition);
+}
+
+.app-container {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  transition: var(--transition);
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  box-shadow: var(--nav-shadow);
+  transition: var(--transition);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brand-text);
+  transition: var(--transition);
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.nav-link {
+  color: var(--nav-text);
+  transition: var(--transition);
+  position: relative;
+  font-weight: 500;
+}
+
+.dark .nav-link::after {
+  background: var(--name-gradient-dark);
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* What Cards Section */
+.what-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.what-card,
+.project-card,
+.cert-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-glow);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.what-card::before,
+.project-card::before,
+.cert-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--name-gradient);
+  opacity: 0;
+  transition: var(--transition);
+  z-index: 0;
+}
+
+.dark .what-card::before,
+.dark .project-card::before,
+.dark .cert-card::before {
+  background: var(--name-gradient-dark);
+}
+
+.what-card:hover,
+.project-card:hover,
+.cert-card:hover {
+  box-shadow: var(--card-glow-hover);
+  border-color: var(--primary-color);
+}
+
+.dark .what-card:hover,
+.dark .project-card:hover,
+.dark .cert-card:hover {
+  border-color: var(--secondary-color);
+}
+
+.what-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.what-card h3,
+.project-card h3,
+.cert-card h3 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.dark .what-card h3,
+.dark .project-card h3,
+.dark .cert-card h3 {
+  color: var(--secondary-color);
+}
+
+.what-card:hover h3,
+.project-card:hover h3,
+.cert-card:hover h3 {
+  transform: scale(1.05);
+}
+
+.what-card p,
+.project-card p,
+.cert-card p {
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Project Grid Section */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.project-card-content {
+  padding: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.project-card .tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.project-card .tech-stack span {
+  background: var(--light-bg);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  color: var(--primary-color);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.dark .project-card .tech-stack span {
+  background: rgba(96, 165, 250, 0.1);
+  color: var(--secondary-color);
+}
+
+.tech-stack span:hover {
+  transform: translateY(-2px);
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+.dark .tech-stack span:hover {
+  background: var(--secondary-color);
+}
+
+/* Certificate Grid Section */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cert-card img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.cert-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Main Content */
+.main-content {
+  background-color: var(--bg-color);
+  transition: var(--transition);
+  min-height: calc(100vh - 120px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .what-cards,
+  .project-grid,
+  .cert-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .what-card,
+  .project-card,
+  .cert-card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.what-card,
+.project-card,
+.cert-card {
+  animation: fadeIn 0.5s ease-out forwards;
+} 

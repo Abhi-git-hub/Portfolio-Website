@@ -1,0 +1,117 @@
+/* Navbar base styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 2.5rem;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background 0.3s;
+}
+
+.navbar-logo a {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: color 0.2s;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+.logo-gradient {
+  width: 80px;
+  height: 24px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #5ee7df 0%, #b490ca 50%, #3ec6e0 100%);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navbar-links li a {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #232526;
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.navbar-links li.active a,
+.navbar-links li a:hover {
+  background: #f3f4f6;
+  color: #3ec6e0;
+}
+
+body.dark .navbar {
+  background: #18181b;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+body.dark .navbar-logo a {
+  color: #ffd700;
+}
+body.dark .navbar-links li a {
+  color: #fff;
+}
+body.dark .navbar-links li.active a,
+body.dark .navbar-links li a:hover {
+  background: #232526;
+  color: #5ee7df;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  background: none;
+  border: 2px solid #e5e7eb;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  margin-left: 1.5rem;
+  transition: border 0.2s;
+}
+.theme-toggle:focus {
+  outline: none;
+  border-color: #3ec6e0;
+}
+
+/* Sun and Moon icons for theme toggle */
+.theme-icon.sun {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url('data:image/svg+xml;utf8,<svg fill="gold" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="5"/><g><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></g></svg>') no-repeat center/contain;
+}
+.theme-icon.moon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url('data:image/svg+xml;utf8,<svg fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 0111.21 3a7 7 0 100 14 9 9 0 009.79-4.21z"/></svg>') no-repeat center/contain;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.2rem;
+  }
+  .navbar-links {
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+}
